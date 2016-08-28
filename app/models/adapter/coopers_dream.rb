@@ -31,6 +31,11 @@ module Adapter
       attrs[:image_url]   = image_node.try(:attr, 'src').try(:value) if image_node.present?
       attrs[:description] = node.try(:css,'.accordion .accordion__content .paragraph').try(:text)
 
+      if attrs[:image_url].present? && !attrs[:image_url].match(/^http/i)
+        base_uri = URI(url)
+        attrs[:image_url] = "#{base_uri.scheme}://#{base_uri.host}#{attrs[:image_url]}"
+      end
+
       attrs
     end
 
