@@ -1,6 +1,10 @@
 class Website < ApplicationRecord
   has_many :puppies
 
+  def self.update_all_puppies
+    all.each &:update_puppies
+  end
+
   def update_puppies
     adapter = load_adapter
     dogs = adapter.dogs

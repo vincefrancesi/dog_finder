@@ -2,7 +2,7 @@ module Adapter
   class CoopersDream < Adapter::Base
 
     def dogs
-      parse_dogs('.wsite-multicol-col')
+      parse_dogs(css: '.wsite-multicol-col')
     end
 
     def dog_attrs(node)

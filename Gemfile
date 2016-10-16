@@ -32,6 +32,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'httparty'
 
+# Used for screen scraping. Read more: https://github.com/jnicklas/capybara
+# gem 'capybara'
+
+# Used for screen scraping. Read more: https://github.com/teampoltergeist/poltergeist
+# gem 'poltergeist'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

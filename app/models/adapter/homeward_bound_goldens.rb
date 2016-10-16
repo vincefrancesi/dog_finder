@@ -2,7 +2,7 @@ module Adapter
   class HomewardBoundGoldens < Adapter::Base
 
     def dogs
-      parse_dogs('.person')
+      parse_dogs(css: '.person')
     end
 
     def dog_attrs(node)

@@ -3,7 +3,7 @@ module Adapter
     attr_accessor :url
 
     def initialize(url)
-      @url = url
+      @url = URI.encode(url).to_s
     end
 
     def page
@@ -12,8 +12,10 @@ module Adapter
       @_page = Nokogiri::HTML(response.body)
     end
 
-    def parse_dogs(selector)
-      page.css(selector).inject([]) do |dogs, node|
+    def parse_dogs(css: nil, xpath: nil)
+      results = (css.present? ? page.css(css) : page.xpath(xpath))
+
+      results.inject([]) do |dogs, node|
         attrs = dog_attrs(node)
 
         if attrs[:name].present?
