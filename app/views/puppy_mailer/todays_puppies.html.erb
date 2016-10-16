@@ -1,5 +1,18 @@
-<h1>Puppy#todays_puppies</h1>
+<h1>Today's Puppies</h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/puppy_mailer/todays_puppies.html.erb
-</p>
+<% @websites.each do |website| %>
+  <h3><%= website.name %></h3>
+  <% puppies = website.puppies.today %>
+  <% if puppies.count > 0 %>
+    <ul>
+      <% puppies.each do |puppy| %>
+        <li>
+          <div><img src="<%= puppy.image_url %>" alt="<%= puppy.name %>" /></div>
+          <div><%= puppy.name %></div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    No new puppies today 😒
+  <% end %>
+<% end %>

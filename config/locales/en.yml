@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  puppy_mailer:
+    todays_puppies:
+      subject: "Today's Puppies!"

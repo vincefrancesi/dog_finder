@@ -1,3 +1,14 @@
-Puppy#todays_puppies
+Todays Puppies
+--------------
 
-<%= @greeting %>, find me in app/views/puppy_mailer/todays_puppies.text.erb
+<% @websites.each do |website| %>
+  <%= website.name %> <%= website.url %>
+  <% puppies = website.puppies.today %>
+  <% if puppies.count > 0 %>
+    <% puppies.each do |puppy| %>
+      - <%= puppy.name %>
+    <% end %>
+  <% else %>
+    No new puppies today 😒
+  <% end %>
+<% end %>
