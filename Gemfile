@@ -1,3 +1,5 @@
+ruby '2.3.1'
+
 source 'https://rubygems.org'
 
 
@@ -37,6 +39,9 @@ gem 'httparty'
 
 # Used for screen scraping. Read more: https://github.com/teampoltergeist/poltergeist
 # gem 'poltergeist'
+
+# Rails 12 Factor gem for heroku
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
