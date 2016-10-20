@@ -1,0 +1,15 @@
+<h1>All Puppies</h1>
+
+<% @websites.each do |website| %>
+  <div class="website">
+    <h1><%= link_to website.name, website.url %></h1>
+    <ul class="puppies">
+      <% website.puppies.each do |puppy| %>
+        <li class="puppy">
+          <div><%= image_tag puppy.image_url, alt: puppy.name %></div>
+          <div><%= puppy.name %></div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
