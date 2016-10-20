@@ -1,21 +1,17 @@
 <h1>Today's Puppies</h1>
 
 <% @websites.each do |website| %>
-  <h3><%= link_to website.name, website.url %></h3>
+  <h3><%= website.name %></h3>
   <% puppies = website.puppies.today %>
   <% if puppies.count > 0 %>
-    <table cellspacing="0" cellpadding="10" border="0">
+    <ul>
       <% puppies.each do |puppy| %>
-        <tr>
-          <td width="80">
-            <h2><%= puppy.name %></h2>
-          </td>
-          <td width="280">
-            <img src="<%= puppy.image_url %>" alt="<%= puppy.name %>" />
-          </td>
-        </tr>
+        <li>
+          <div><img src="<%= puppy.image_url %>" alt="<%= puppy.name %>" /></div>
+          <div><%= puppy.name %></div>
+        </li>
       <% end %>
-    </table>
+    </ul>
   <% else %>
     No new puppies today 😒
   <% end %>
