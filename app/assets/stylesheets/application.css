@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+tr:nth-of-type(odd) {
+  background-color: #f5f5f5; }
+
