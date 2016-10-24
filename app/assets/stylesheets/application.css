@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: 'Titillium Web', sans-serif;
+    font-weight: 200;
+}
+
+ul {
+  margin-right: 40px;
+}
+
+h1 {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-left: 40px;
+}
+
+.website-name {
+  margin-left: 40px;
+  font-weight: 400;
+}
+
+.website-name:link {
+  color: #3498db;
+}
+
+.website-name:visited {
+  color: #8e44ad;
+}
+
+.list li {
+  display: table;
+  width: 100%;
+  border: 1px solid #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.inner {
+    display: table-row;
+    overflow: hidden;
+    background-color: #ecf0f1;
+}
+
+.puppy-img {
+    display: table-cell;
+    vertical-align: middle;
+    width: 30%;
+    padding-right: 20px;
+}
+
+.puppy-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.puppy-text {
+    display: table-cell;
+    vertical-align: middle;
+    width: 70%;
+    padding-right: 1em;
+}
+
+.puppy-name {
+    margin: 0;
+    font-weight: 300;
+    color: #c0392b;
+}
+
+.puppy-desc {
+    margin: 0;
+    color: #34495e;
+}
