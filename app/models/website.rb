@@ -12,7 +12,8 @@ class Website < ApplicationRecord
       name      = dog[:name]
       image_url = dog[:image_url]
 
-      puppies.where(name: name).first_or_create(image_url: image_url)
+      puppy = puppies.where(name: name).first_or_create(image_url: image_url)
+      puppy.update(description: dog[:description])
     end
     dog_names = dogs.collect { |d| d[:name] }
 
