@@ -11,6 +11,7 @@ class Website < ApplicationRecord
     dogs.each do |dog|
       name      = dog[:name]
       image_url = dog[:image_url]
+      description = dog[:description]
 
       puppy = puppies.where(name: name).first_or_create(image_url: image_url)
       puppy.update(description: dog[:description])
