@@ -81,6 +81,8 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.action_controller.default_url_options = { host: ENV['app_host'], scheme: 'https' }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
