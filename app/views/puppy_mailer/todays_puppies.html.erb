@@ -8,7 +8,7 @@
       <% puppies.each do |puppy| %>
         <tr>
           <td width="80">
-            <h2><%= puppy.name %></h2>
+            <h2><%= link_to puppy.name, puppy.url %></h2>
           </td>
           <td width="280">
             <img src="<%= puppy.image_url %>" alt="<%= puppy.name %>" />
