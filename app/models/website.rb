@@ -9,12 +9,13 @@ class Website < ApplicationRecord
     adapter = load_adapter
     dogs = adapter.dogs
     dogs.each do |dog|
-      name      = dog[:name]
-      image_url = dog[:image_url]
+      name        = dog[:name]
+      image_url   = dog[:image_url]
       description = dog[:description]
+      url         = dog[:url]
 
       puppy = puppies.where(name: name).first_or_create
-      puppy.update(description: description, image_url: image_url)
+      puppy.update(description: description, image_url: image_url, url: url)
     end
     dog_names = dogs.collect { |d| d[:name] }
 

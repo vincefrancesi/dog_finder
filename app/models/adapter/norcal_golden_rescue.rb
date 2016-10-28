@@ -11,6 +11,7 @@ module Adapter
 
       attrs[:name]        = dog_name(node)
       attrs[:image_url]   = node.xpath('tr/td/a/img').first.try(:attr, 'src')
+      attrs[:url]         = node.xpath('tr/td/a').first.try(:attr, 'href')
 
       if attrs[:image_url].present? && !attrs[:image_url].match(/^http/i)
         base_uri = URI(url)

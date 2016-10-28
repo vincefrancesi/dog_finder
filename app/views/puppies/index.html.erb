@@ -15,7 +15,7 @@
             <div class="inner">
               <div class="puppy-img"><%= image_tag puppy.image_url, alt: puppy.name %></div>
               <div class="puppy-text">
-                <h3 class="puppy-name"><%= puppy.name %></h3>
+                <h3 class="puppy-name"><%= link_to puppy.name, puppy.url %></h3>
                 <div class="puppy-desc"><%= puppy.description %></div>
               </div>
             </div>

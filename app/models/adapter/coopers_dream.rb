@@ -11,6 +11,7 @@ module Adapter
       attrs[:name]        = node.try(:css,'.accordion .accordion__item:first-child  .accordion__title .paragraph').try(:text).try(:titleize)
       attrs[:image_url]   = image_node.try(:attr, 'src').try(:value) if image_node.present?
       attrs[:description] = node.try(:css,'.accordion .accordion__content .paragraph').try(:text)
+      attrs[:url]         = node.try(:css,'.wsite-image a').try(:first).try(:attr, 'href')
 
       if attrs[:name] && attrs[:name].match(/adopted/i)
         attrs[:name] = nil
