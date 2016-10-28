@@ -12,6 +12,7 @@ module Adapter
       attrs[:name]        = node.try(:css,'.person-name').try(:text)
       attrs[:image_url]   = image_node.try(:attr, 'src').try(:value) if image_node.present?
       attrs[:description] = node.try(:css,'.person-description').try(:text)
+      attrs[:url]         = node.try(:css,'.person-image-container a').first.try(:attr, 'href')
 
       if attrs[:name] && attrs[:name].match(/adopted/i)
         attrs[:name] = nil
